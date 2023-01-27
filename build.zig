@@ -22,7 +22,7 @@ pub fn build(b: *std.build.Builder) void {
     exe.linkSystemLibrary("GL");
     exe.linkSystemLibrary("GLEW");
     exe.addIncludePath("dos");
-    // exe.addCSourceFile("dos/dos.h", &[_][]const u8{});
+    exe.addCSourceFile("dos/dos.c", &[_][]const u8{});
 
     exe.install();
 

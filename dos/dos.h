@@ -198,6 +198,8 @@ int mousey( void );
 int mouserelx( void );
 int mouserely( void );
 
+int dosmain( int argc, const char* argv[] );
+
 #endif /* dos_h */
 
 
@@ -2157,8 +2159,6 @@ struct user_thread_context_t {
 };
 
 
-int dosmain( int argc, char* argv[] );
-
 #ifndef __wasm__
 static
 #else
@@ -3692,7 +3692,7 @@ void bin2arr( char const* src, char const* dst, char const* name ) {
 
 //*** main ***
 
-int main( int argc, char** argv ) {
+int dosmain( int argc, const char* argv[] ) {
     (void) argc, (void) argv;
 
     //bin2arr( "framecol.gif", "crtframecol.h", "crtframecol" );
