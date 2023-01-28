@@ -21,6 +21,9 @@ pub fn build(b: *std.build.Builder) void {
     exe.linkSystemLibrary("SDL2");
     exe.linkSystemLibrary("GL");
     exe.linkSystemLibrary("GLEW");
+    exe.linkSystemLibrary("glfw");
+    exe.linkSystemLibrary("m");
+    exe.linkSystemLibrary("pthread");
     exe.addIncludePath("dos");
     exe.addCSourceFile("dos/dos.c", &[_][]const u8{});
 
