@@ -24,6 +24,8 @@ pub fn build(b: *std.build.Builder) void {
     exe.addIncludePath("dos");
     exe.addCSourceFile("dos/dos.c", &[_][]const u8{});
 
+    // exe.disable_sanitize_c = true;
+
     exe.install();
 
     const run_cmd = exe.run();
